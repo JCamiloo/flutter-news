@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/services/news_service.dart';
+import 'package:news/src/widgets/news_list.dart';
 import 'package:provider/provider.dart';
 
 class RecommendationsPage extends StatelessWidget {
@@ -7,10 +8,10 @@ class RecommendationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final newsService = Provider.of<NewsService>(context);
+    final headlines = Provider.of<NewsService>(context).headlines;
 
     return Container(
-      child: Center(child: Text('Hola mundo'),),
+      child: NewsList(headlines)
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/src/pages/categories_page.dart';
 import 'package:provider/provider.dart';
 import 'package:news/src/pages/recommendations_page.dart';
 
@@ -30,9 +31,7 @@ class _Pages extends StatelessWidget {
         onPageChanged: (index) => navigationModel.currentPage = index,
         children: <Widget>[
           RecommendationsPage(),
-          Container(
-            color: Colors.green,
-          ),
+          CategoriesPage()
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:news/src/pages/recommendations_page.dart';
 
 class TabsPage extends StatelessWidget {
 
@@ -28,9 +29,7 @@ class _Pages extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         onPageChanged: (index) => navigationModel.currentPage = index,
         children: <Widget>[
-          Container(
-            color: Colors.red,
-          ),
+          RecommendationsPage(),
           Container(
             color: Colors.green,
           ),

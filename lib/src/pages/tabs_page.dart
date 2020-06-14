@@ -27,7 +27,8 @@ class _Pages extends StatelessWidget {
     return Scaffold(
       body: PageView(
         controller: navigationModel.pageController,
-        physics: BouncingScrollPhysics(),
+        // physics: BouncingScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         onPageChanged: (index) => navigationModel.currentPage = index,
         children: <Widget>[
           RecommendationsPage(),

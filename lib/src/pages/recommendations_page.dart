@@ -10,18 +10,22 @@ class RecommendationsPage extends StatefulWidget {
 }
 
 class _RecommendationsPageState extends State<RecommendationsPage> with AutomaticKeepAliveClientMixin {
+  
   @override
   Widget build(BuildContext context) {
 
     final headlines = Provider.of<NewsService>(context).headlines;
 
-    return Scaffold(
-      body: (headlines.length == 0)
-          ? Center(child: CircularProgressIndicator())
-          : NewsList(headlines)
+    return SafeArea(
+      child: Scaffold(
+        body: (headlines.length == 0)
+            ? Center(child: CircularProgressIndicator())
+            : NewsList(headlines)
+      ),
     );
   }
 
   @override
   bool get wantKeepAlive => true;
+
 }

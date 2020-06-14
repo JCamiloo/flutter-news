@@ -15,7 +15,9 @@ class CategoriesPage extends StatelessWidget {
         body: Column(
           children: <Widget>[
             _CategoriesList(),
-            Expanded(child: NewsList(newsService.selectedCategoryNews))
+            (newsService.isLoading)
+            ? Expanded(child: Center( child: CircularProgressIndicator()))
+            : Expanded(child: NewsList(newsService.selectedCategoryNews)),
           ],
         ),
       )
